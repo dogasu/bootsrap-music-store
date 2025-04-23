@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Müzik Aletleri Mağazası</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ /* Genel gövde arka plan rengi */
+ body {
+    background-color: #E9ECEF;
+  }
+
+  /* Kart içindeki resimlerin boyutlandırılması */
+  .card img {
+    width: 100%; /* Resmi kartın genişliğine göre ayarla */
+    height:auto; /* Sabit bir yükseklik belirle */
+    object-fit: cover; /* Resmin taşmasını önle ve düzgün bir şekilde kırp */
+  }
+
+  /* Tüm bölümleri başlangıçta gizle */
+  .section {
+    display: none;
+  }
+
+  /* Ana Sayfa başlangıçta görünür */
+  #anasayfa {
+    display: block;
+    text-align: center;
+  }
+
+  /* Üst yazıları koyu kırmızı yap */
+  h1, h2, h3 {
+    color: #140868; /* Koyu kırmızı renk */
+  }
+
+  #anasayfa p {
+    color: #6C757D; /* Gri renk */
+  }
+
+  #anasayfa ul li {
+    color: #28A745; /* Yeşil renk */
+  }
+
+  #urunler .card-title {
+    color: #FFC107; /* Sarı renk */
+  }
+
+  #urunler .card-text {
+    color: #343A40; /* Koyu gri renk */
+  }
+
+  #hakkimizda p {
+    color: #495057; /* Orta gri renk */
+  }
+
+  /* Navbar bağlantılarını kırmızı yap */
+  .navbar .nav-link {
+    color: #FF0000 !important; /* Kırmızı renk */
+  }
+
+  /* Navbar'daki aktif bağlantıyı da kırmızı yap */
+  .navbar .nav-link.active {
+    color: #FF0000 !important; /* Kırmızı renk */
+  }
+  /* Navbar'daki aktif bağlantıyı da kırmızı yap */
+  .navbar .navbar-brand {
+    color: #FF0000 !important; /* Kırmızı renk */
+  }
+</style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50" tabindex="0">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <!-- Müzik Dünyası bağlantısına onclick eklendi -->
+      <a class="navbar-brand" href="#anasayfa" onclick="showSection('anasayfa')">Müzik Dünyası</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#anasayfa" onclick="showSection('anasayfa')">Ana Sayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#urunler" onclick="showSection('urunler')">Ürünlerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hakkimizda" onclick="showSection('hakkimizda')">Hakkımızda</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Ana Sayfa -->
+  <div class="p-5 mb-4 bg-light rounded-3 section" id="anasayfa">
+    <div class="container py-5">
+      <h1 class="display-5 fw-bold">Müzik Tutkunları İçin</h1>
+      <p class="col-md-8 fs-4">Kaliteli ve uygun fiyatlı müzik aletlerini sizlere sunuyoruz. Gitar, piyano, bateri ve daha fazlası burada!</p>
+      <h2 class="mt-5">Müzik Aleti Çeşitlerimiz</h2>
+      <ul class="list-unstyled fs-5">
+        <li>🎸 Gitar</li>
+        <li>🎹 Piyano</li>
+        <li>🥁 Bateri</li>
+        <li>🎷 Saksofon</li>
+        <li>🎺 Trompet</li>
+        <li>🎻 Keman</li>
+      </ul>
+      <p class="mt-4 fs-5">Bu ürünleri detaylı incelemek için <a href="#urunler" onclick="showSection('urunler')">Ürünlerimiz</a> sekmesine göz atabilirsiniz.</p>
+    
+    </div>
+  </div>
+
+  <!-- Ürünler -->
+  <div class="container section" id="urunler">
+    <h2 class="mb-4">Ürünlerimiz</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <!-- Gitar resmi -->
+          <img src="images/gitar.jpg" class="card-img-top" alt="Gitar">
+          <div class="card-body">
+            <h5 class="card-title">Gitar</h5>
+            <p class="card-text">Profesyonel akustik gitar modeli.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <!-- Piyano resmi -->
+          <img src="images/piano.jpg" class="card-img-top" alt="Piyano">
+          <div class="card-body">
+            <h5 class="card-title">Piyano</h5>
+            <p class="card-text">88 tuşlu dijital piyano.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <!-- Bateri resmi -->
+          <img src="images/bateri.jpg" class="card-img-top" alt="Bateri">
+          <div class="card-body">
+            <h5 class="card-title">Bateri</h5>
+            <p class="card-text">Tam set profesyonel bateri takımı.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <!-- Saksofon resmi -->
+          <img src="images/saksofon.jpg" class="card-img-top" alt="Saksofon">
+          <div class="card-body">
+            <h5 class="card-title">Saksofon</h5>
+            <p class="card-text">Profesyonel bir saksofon modeli.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <!-- Trompet resmi -->
+          <img src="images/trompet.jpg" class="card-img-top" alt="Trompet">
+          <div class="card-body">
+            <h5 class="card-title">Trompet</h5>
+            <p class="card-text">Profesyonel bir trompet modeli.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <!-- Keman resmi -->
+          <img src="images/keman.jpg" class="card-img-top" alt="Keman">
+          <div class="card-body">
+            <h5 class="card-title">Keman</h5>
+            <p class="card-text">4/4'lük profesyonel bir keman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hakkımızda -->
+  <div class="container my-5 section" id="hakkimizda">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Hakkımızda</h3>
+      <p class="card-text">
+        Müzik Dünyası olarak, müzik tutkunlarının hayallerini gerçekleştirmelerine yardımcı olmayı kendimize misyon edindik. Yıllardır sektörde edindiğimiz tecrübeyle, her yaştan ve her seviyeden müziksevere en kaliteli müzik aletlerini sunuyoruz. 
+      </p>
+      <p class="card-text">
+        Vizyonumuz, müzik dünyasında bir ilham kaynağı olmak ve müşterilerimize sadece ürün değil, aynı zamanda bir deneyim sunmaktır. Geniş ürün yelpazemizle, ister profesyonel bir müzisyen olun ister yeni başlayan bir öğrenci, ihtiyaçlarınıza uygun çözümler sunuyoruz.
+      </p>
+      <p class="card-text">
+        Mağazamızda gitar, piyano, bateri, saksafon, keman ve daha birçok enstrüman bulabilirsiniz. Ayrıca, her ürünümüz için detaylı bilgi ve rehberlik sağlayan uzman ekibimizle, doğru seçimi yapmanıza yardımcı oluyoruz. Müşteri memnuniyeti bizim için her zaman ön plandadır ve bu nedenle satış sonrası destek hizmetlerimizle de yanınızdayız.
+      </p>
+      <p class="card-text">
+        Müzik Dünyası olarak, sadece bir mağaza değil, aynı zamanda bir topluluk oluşturmayı hedefliyoruz. Düzenlediğimiz atölyeler, etkinlikler ve konserlerle, müzikseverleri bir araya getiriyor ve müziğin birleştirici gücünü kutluyoruz.
+      </p>
+      <p class="card-text">
+        Siz de bu eşsiz deneyimin bir parçası olmak ve müzik yolculuğunuza bizimle devam etmek isterseniz, mağazamıza uğrayabilir veya web sitemiz üzerinden ürünlerimizi inceleyebilirsiniz. Müzik Dünyası ailesi olarak, sizi aramızda görmekten mutluluk duyarız!
+      </p>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Belirli bir bölümü göstermek için fonksiyon
+    function showSection(sectionId) {
+      // Tüm bölümleri gizle
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      // İlgili bölümü göster
+      document.getElementById(sectionId).style.display = 'block';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 ">
+    <div class="container">
+      <p class="mb-0">© 2025 Müzik Dünyası. Tüm Hakları Saklıdır.</p>
+      <p class="mb-0">Bizi takip edin: 
+        <a href="#" class="text-white text-decoration-none mx-1">Facebook</a> | 
+        <a href="#" class="text-white text-decoration-none mx-1">Twitter</a> | 
+        <a href="#" class="text-white text-decoration-none mx-1">Instagram</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
